@@ -1,0 +1,47 @@
+1. speed
+2. Battery and reserved battery
+3. Solar panels
+4. Distance calculation accordance with battery
+5. Distance of drone with mars terain
+6. new map for get back to point A(space craft)
+
+
+Functions by ChatGPT:
+
+Building a rover navigation system for Mars in Unity would require a combination of functions and algorithms to ensure efficient and collision-free navigation. 
+Below is a list of some of the key functions and their explanations:
+
+1. **InitializeTerrainMap()**: This function initializes a grid-based representation of the Martian terrain using the map provided by the drone. 
+Each cell in the grid stores information about terrain type, obstacles, and elevation, which is essential for path planning.
+
+2. **GeneratePath(PointA, PointB)**: This function calculates the most efficient path from the rover's current position (PointA) to the destination (PointB) on the terrain map. 
+It can use algorithms like A* (A-star) or Dijkstra's algorithm to find the optimal route.
+
+3. **ObstacleDetection()**: This function scans the immediate surroundings of the rover to detect obstacles using sensors such as lidar or cameras. 
+It returns information about the presence and location of obstacles.
+
+4. **CollisionAvoidance(path, obstacles)**: Given the planned path and obstacle information, this function adjusts the path to avoid 
+It may use techniques like local path replanning or obstacle avoidance algorithms to ensure the rover avoids obstacles dynamically.
+
+5. **TerrainAnalysis()**: This function analyzes the terrain ahead to make informed decisions about traversability. It takes into account the terrain's roughness, slope,
+ and other factors to adjust the rover's speed and behavior.
+
+6. **UpdatePosition()**: This function updates the rover's position and orientation in the Unity simulation based on its movement and the path it's following.
+
+7. **ControlRover()**: This function controls the rover's actuators (e.g., wheels, steering, and throttle) to execute the planned path while adhering to speed and turning constraints.
+
+8. **UpdateUI()**: This function updates the user interface with relevant information, such as the rover's current position, destination, and any warnings or notifications.
+
+9. **CommunicationWithDrone()**: This function establishes communication with the drone that provides real-time updates about the terrain or
+ any potential obstacles that the rover may not be able to detect on its own.
+
+10. **BatteryManagement()**: If the rover has a limited power supply, this function monitors and manages the rover's energy consumption to ensure it can complete 
+its mission without running out of power.
+
+11. **MissionCompletionCheck()**: This function constantly checks whether the rover has reached its destination and completed its mission.
+ It can trigger additional actions or reports when the mission is accomplished.
+
+12. **DebuggingTools()**: Implement functions to assist with debugging and visualization, such as displaying the grid-based terrain map, visualizing the path, or showing sensor data.
+
+The number of functions and their complexity may vary depending on the specifics of your simulation and the capabilities of your rover.
+ Building a robust navigation system involves integrating these functions effectively, testing thoroughly, and continuously improving the system to handle various scenarios on Mars.
